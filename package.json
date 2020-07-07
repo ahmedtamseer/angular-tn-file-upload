@@ -1,13 +1,22 @@
 {
-  "name": "tn-file-upload",
-  "version": "0.0.0",
+  "name": "tn-file-upload-lib",
+  "version": "1.0.0",
+  "author": "Ahamed Thamseer - ahmedtamseer3@gmail.com",
+  "description": "Angular package for to customize input type file in both reactive and template driven forms",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "lib:build": "ng build tn-file-upload --prod",
+    "lib:schematics": "cd projects/tn-file-upload && npm run build",
+    "lib:linkschematics": "npm link dist/tn-file-upload",
+    "lib:pack": "cd dist/tn-file-upload && npm pack",
+    "lib:install": "npm uninstall tn-file-upload && npm uninstall @ahamedtamseer/tn-file-upload && npm i ./dist/tn-file-upload/tn-file-upload-1.0.0.tgz -S",
+    "lib:publish": "cd dist/tn-file-upload && npm init --scope=ahmedtamseer && npm publish --access public",
+    "lib": "npm run lib:build && npm run lib:schematics && npm run lib:linkschematics && npm run lib:pack && npm run lib:publish"
   },
   "private": true,
   "dependencies": {
@@ -20,10 +29,13 @@
     "@angular/platform-browser-dynamic": "~10.0.0",
     "@angular/router": "~10.0.0",
     "rxjs": "~6.5.5",
+    "tn-file-upload": "file:dist/tn-file-upload/tn-file-upload-1.0.0.tgz",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "~0.1000.1",
+    "@angular-devkit/build-ng-packagr": "~0.1000.1",
     "@angular/cli": "~10.0.0",
     "@angular/compiler-cli": "~10.0.0",
     "@types/node": "^12.11.1",
@@ -37,9 +49,28 @@
     "karma-coverage-istanbul-reporter": "~3.0.2",
     "karma-jasmine": "~3.3.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "ng-packagr": "^10.0.0",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~3.9.5"
-  }
+  },
+  "keywords": [
+    "angular",
+    "File",
+    "Upload File",
+    "Upload",
+    "reactive form input",
+    "template driven form input",
+    "rxjs"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ahmedtamseer/angular-tn-form-error/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmedtamseer/angular-tn-form-error.git"
+  },
+  "homepage": "https://github.com/ahmedtamseer/angular-tn-form-error.git#readme"
 }

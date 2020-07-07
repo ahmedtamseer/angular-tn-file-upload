@@ -1,0 +1,119 @@
+<div style="display: flex;">
+  <div style="flex-basis: 50%">
+    <label>Template Driven Example</label>
+    <tn-file-upload [(ngModel)]="ngModalExample" #name="ngModel" [accept]="demoForm.get('accept').value"
+      [multiple]="demoForm.get('multiple').value == 'true'" [maxFileCount]="demoForm.get('maxFileCount').value"
+      [displayFile]="demoForm.get('displayFile').value == 'true'"
+      [displayName]="demoForm.get('displayName').value == 'true'"
+      [displaySize]="demoForm.get('displaySize').value == 'true'" [base64]="demoForm.get('base64').value == 'true'"
+      [showCustomRemoveButton]="demoForm.get('showCustomRemoveButton').value == 'true'"
+      [restrictSize]="demoForm.get('restrictSize').value" [hidden]="demoForm.get('hidden').value == 'true'"
+      [isDisabled]="demoForm.get('isDisabled').value == 'true'"></tn-file-upload>
+  </div>
+
+  <form [formGroup]="demoForm" style="flex-basis: 50%">
+    <div class="w-80">
+      <label for="tn_file">Reactive Form Example</label>
+      <div style="position: relative;">
+        <tn-file-upload formControlName="tn_file" [accept]="demoForm.get('accept').value"
+          [multiple]="demoForm.get('multiple').value == 'true'" [maxFileCount]="demoForm.get('maxFileCount').value"
+          [displayFile]="demoForm.get('displayFile').value == 'true'"
+          [displayName]="demoForm.get('displayName').value == 'true'"
+          [displaySize]="demoForm.get('displaySize').value == 'true'" [base64]="demoForm.get('base64').value == 'true'"
+          [showCustomRemoveButton]="demoForm.get('showCustomRemoveButton').value == 'true'"
+          [restrictSize]="demoForm.get('restrictSize').value" [hidden]="demoForm.get('hidden').value == 'true'"
+          [isDisabled]="demoForm.get('isDisabled').value == 'true'"></tn-file-upload>
+      </div>
+    </div>
+  </form>
+
+</div>
+
+<form [formGroup]="demoForm">
+  <div class="w-80">
+    <label for="accept">Accept File</label>
+    <input type="text" formControlName="accept" name="accept" placeholder="*/*, image/*, application/*">
+  </div>
+  <div class="w-80">
+    <label for="restrictSize">Restrict Size</label>
+    <input type="number" formControlName="restrictSize" name="restrictSize" placeholder="Integer value in MB">
+  </div>
+  <div>
+    <label for="multiple">Multiple</label>
+    <label>
+      <input type="radio" value=false formControlName="multiple"> False
+    </label>
+    <label>
+      <input type="radio" value=true formControlName="multiple"> True
+    </label>
+  </div>
+  <div class="w-80" *ngIf="demoForm.get('multiple').value == 'true'">
+    <label for="maxFileCount">Max File Count (<small>Applicable only when multiple is true</small>)</label>
+    <input type="number" formControlName="maxFileCount" name="maxFileCount" placeholder="1">
+  </div>
+  <div>
+    <label>Display File</label>
+    <label>
+      <input type="radio" value=false formControlName="displayFile"> False
+    </label>
+    <label>
+      <input type="radio" value=true formControlName="displayFile"> True
+    </label>
+  </div>
+  <div>
+    <label>Display name</label>
+    <label>
+      <input type="radio" value=false formControlName="displayName"> False
+    </label>
+    <label>
+      <input type="radio" value=true formControlName="displayName"> True
+    </label>
+  </div>
+  <div>
+    <label>Display Size</label>
+    <label>
+      <input type="radio" value=false formControlName="displaySize"> False
+    </label>
+    <label>
+      <input type="radio" value=true formControlName="displaySize"> True
+    </label>
+  </div>
+  <div>
+    <label>Show Custom remove Btn</label>
+    <label>
+      <input type="radio" value=false formControlName="showCustomRemoveButton"> False
+    </label>
+    <label>
+      <input type="radio" value=true formControlName="showCustomRemoveButton"> True
+    </label>
+  </div>
+  <div>
+    <label>HTML Hidden attribute</label>
+    <label>
+      <input type="radio" value=false formControlName="hidden"> False
+    </label>
+    <label>
+      <input type="radio" value=true formControlName="hidden"> True
+    </label>
+  </div>
+  <div>
+    <label>Disabled</label>
+    <label>
+      <input type="radio" value=false formControlName="isDisabled"> False
+    </label>
+    <label>
+      <input type="radio" value=true formControlName="isDisabled"> True
+    </label>
+  </div>
+  <div>
+    <label>File as base64</label>
+    <label>
+      <input type="radio" value=false formControlName="base64"> False
+    </label>
+    <label>
+      <input type="radio" value=true formControlName="base64"> True
+    </label>
+  </div>
+</form>
+<br>
+<hr>

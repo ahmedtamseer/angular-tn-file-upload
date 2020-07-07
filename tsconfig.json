@@ -6,5 +6,21 @@
 */
 {
   "files": [],
-  "references": []
+  "references": [
+    {
+      "path": "./projects/tn-file-upload/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/tn-file-upload/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/tn-file-upload-example/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/tn-file-upload-example/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/tn-file-upload-example/e2e/tsconfig.json"
+    }
+]
 }

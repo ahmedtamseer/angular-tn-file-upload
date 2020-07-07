@@ -1,0 +1,37 @@
+{
+  "name": "tn-file-upload",
+  "version": "1.0.0",
+  "author": "Ahamed Thamseer - ahmedtamseer3@gmail.com",
+  "description": "Angular package for to customize input type file in both reactive and template driven forms",
+  "scripts": {
+    "build": "..\\..\\node_modules\\.bin\\tsc -p tsconfig.schematics.json",
+    "copy:collection": "cp schematics\\collection.json ..\\..\\dist\\tn-file-upload\\schematics\\collection.json",
+    "postbuild": "npm run copy:collection"
+  },
+  "peerDependencies": {
+    "@angular/common": "^10.0.0",
+    "@angular/core": "^10.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
+  "keywords": [
+    "angular",
+    "File",
+    "Upload File",
+    "Upload",
+    "reactive form input",
+    "template driven form input",
+    "rxjs"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ahmedtamseer/angular-tn-file-upload/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmedtamseer/angular-tn-file-upload.git"
+  },
+  "homepage": "https://github.com/ahmedtamseer/angular-tn-file-upload.git#readme",
+  "schematics": "./schematics/collection.json"
+}

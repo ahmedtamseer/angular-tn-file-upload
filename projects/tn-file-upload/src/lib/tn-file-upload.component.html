@@ -1,0 +1,21 @@
+<div class="tn-i-d-m-b">
+  <i class="loader" *ngIf="showSpinner"></i>
+  <input type="file" #tnFileUploader (change)="tnImportFile($event)" [multiple]="multiple" [accept]="accept"
+    name="tnFileUploader" [class]="class" [ngClass]="{'tn-hidden':hidden}" [disabled]="isDisabled">
+  <p *ngIf="msg" class="nt-err-msg">{{msg}}</p>
+  <div class="tn-i-d-m-b" *ngIf="images.length != 0 && !hidden">
+    <div *ngFor="let image of images;let i = index;" class="tn-i-d-b">
+      <img [src]="image?.url" *ngIf="displayFile">
+      <iframe [src]="sanitizer.bypassSecurityTrustResourceUrl(image?.url)"
+        *ngIf="displayFile && ((image?.ext == 'pdf' && image?.preExt == 'application') || image?.ext == 'svg+xml')"></iframe>
+      <p style="text-align: center; word-wrap: break-word;margin:0;"
+        *ngIf="displayName || displaySize|| image?.status != ''">
+        <small *ngIf="displayName && image?.name">{{image?.name}}</small>
+        <small *ngIf="displaySize &&image?.size"> ({{image?.size | number}} Bytes)</small>
+      </p>
+      <button (click)="tnRemove(i)" *ngIf="showCustomRemoveButton" class="nt-btn no-min-width tn-close">
+        X
+      </button>
+    </div>
+  </div>
+</div>

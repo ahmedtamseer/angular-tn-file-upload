@@ -1,0 +1,26 @@
+body {
+    margin: 20px;
+}
+
+
+
+
+div label,
+div input {
+  margin: 10px 0;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+div label {
+  font-weight: bold;
+}
+
+div.w-80 label,
+div.w-80 input {
+  width: 50%;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
