@@ -1,20 +1,28 @@
 <div style="display: flex;">
   <div style="flex-basis: 50%">
     <label>Template Driven Example</label>
-    <tn-file-upload [(ngModel)]="ngModalExample" #name="ngModel" [accept]="demoForm.get('accept').value"
-      [multiple]="demoForm.get('multiple').value == 'true'" [maxFileCount]="demoForm.get('maxFileCount').value"
-      [displayFile]="demoForm.get('displayFile').value == 'true'"
-      [displayName]="demoForm.get('displayName').value == 'true'"
-      [displaySize]="demoForm.get('displaySize').value == 'true'" [base64]="demoForm.get('base64').value == 'true'"
-      [showCustomRemoveButton]="demoForm.get('showCustomRemoveButton').value == 'true'"
-      [restrictSize]="demoForm.get('restrictSize').value" [hidden]="demoForm.get('hidden').value == 'true'"
-      [isDisabled]="demoForm.get('isDisabled').value == 'true'"></tn-file-upload>
+    <div style="position: relative;width: 100%;height: 50px;">
+      <label style="position: absolute;height: 100%;width: 100%;z-index: -1;color: red"
+        *ngIf="demoForm.get('hidden').value == 'true'">You can add any customised text or image here. Please check the
+        style applied to this tag. click me to select file</label>
+      <tn-file-upload [(ngModel)]="ngModalExample" #name="ngModel" [accept]="demoForm.get('accept').value"
+        [multiple]="demoForm.get('multiple').value == 'true'" [maxFileCount]="demoForm.get('maxFileCount').value"
+        [displayFile]="demoForm.get('displayFile').value == 'true'"
+        [displayName]="demoForm.get('displayName').value == 'true'"
+        [displaySize]="demoForm.get('displaySize').value == 'true'" [base64]="demoForm.get('base64').value == 'true'"
+        [showCustomRemoveButton]="demoForm.get('showCustomRemoveButton').value == 'true'"
+        [restrictSize]="demoForm.get('restrictSize').value" [hidden]="demoForm.get('hidden').value == 'true'"
+        [isDisabled]="demoForm.get('isDisabled').value == 'true'"></tn-file-upload>
+    </div>
   </div>
 
   <form [formGroup]="demoForm" style="flex-basis: 50%">
     <div class="w-80">
       <label for="tn_file">Reactive Form Example</label>
-      <div style="position: relative;">
+      <div style="position: relative;width: 100%;height: 50px;">
+        <label style="position: absolute;height: 100%;width: 100%;z-index: -1;color: red"
+          *ngIf="demoForm.get('hidden').value == 'true'">You can add any customised text or image here. Please check the
+          style applied to this tag. click me to select file</label>
         <tn-file-upload formControlName="tn_file" [accept]="demoForm.get('accept').value"
           [multiple]="demoForm.get('multiple').value == 'true'" [maxFileCount]="demoForm.get('maxFileCount').value"
           [displayFile]="demoForm.get('displayFile').value == 'true'"

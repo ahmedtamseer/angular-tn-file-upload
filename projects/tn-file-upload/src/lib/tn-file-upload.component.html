@@ -1,4 +1,3 @@
-<div class="tn-i-d-m-b">
   <i class="loader" *ngIf="showSpinner"></i>
   <input type="file" #tnFileUploader (change)="tnImportFile($event)" [multiple]="multiple" [accept]="accept"
     name="tnFileUploader" [class]="class" [ngClass]="{'tn-hidden':hidden}" [disabled]="isDisabled">
@@ -18,4 +17,3 @@
       </button>
     </div>
   </div>
-</div>

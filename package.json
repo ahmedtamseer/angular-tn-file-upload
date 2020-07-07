@@ -14,7 +14,7 @@
     "lib:schematics": "cd projects/tn-file-upload && npm run build",
     "lib:linkschematics": "npm link dist/tn-file-upload",
     "lib:pack": "cd dist/tn-file-upload && npm pack",
-    "lib:install": "npm uninstall tn-file-upload && npm uninstall @ahamedtamseer/tn-file-upload && npm i ./dist/tn-file-upload/tn-file-upload-1.0.0.tgz -S",
+    "lib:install": "npm uninstall tn-file-upload && npm uninstall @ahamedtamseer/tn-file-upload && ng add @ahmedtamseer/tn-file-upload",
     "lib:publish": "cd dist/tn-file-upload && npm init --scope=ahmedtamseer && npm publish --access public",
     "lib": "npm run lib:build && npm run lib:schematics && npm run lib:linkschematics && npm run lib:pack && npm run lib:publish"
   },
